@@ -1,6 +1,6 @@
-from model import CalculatorModel
-from view import CalculatorView
-from controller import CalculatorController
+from Model.model import CalculatorModel
+from View.view import CalculatorView
+from Controller.controller import CalculatorController
 
 def main():
     model = CalculatorModel()

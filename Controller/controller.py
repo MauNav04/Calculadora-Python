@@ -3,6 +3,7 @@ class CalculatorController:
         self.model = model
         self.view = view
         self.view.protocol("WM_DELETE_WINDOW", self.on_close)
+ 
         
         # Bind keyboard events
         self.view.bind('<Key>', self.on_key_press)
@@ -10,6 +11,7 @@ class CalculatorController:
         
     def on_button_click(self, button_text):
         current = self.model.current_value
+        
         
         try:
             if button_text in '0123456789':
@@ -38,9 +40,9 @@ class CalculatorController:
                 self.view.update_display(self.model.current_value)
             
             elif button_text == '=':
-                result = self.model.perform_calculation()
-                self.view.update_display(result)
-                self.model.operation = None
+                 result = self.model.perform_calculation()
+                 self.view.update_display(result)
+                 self.model.operation = None
             
             elif button_text == 'M+':
                 success = self.model.add_to_memory()
